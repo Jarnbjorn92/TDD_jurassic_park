@@ -21,11 +21,20 @@ Park.prototype.findMostAttractiveDino = function(){
     let mostAttractiveDino = this.dinosaurs[0];
     for (const dino of this.dinosaurs){
         if (dino.guestsAttractedPerDay > mostAttractiveDino.guestsAttractedPerDay){
-            mostAttractiveDino = dino
+            mostAttractiveDino = dino;
         }
     }
-    return mostAttractiveDino
+    return mostAttractiveDino;
 }
 
+Park.prototype.findBySpecies = function(species){
+    let allOfSearchSpecies = [];
+    for (const dinos of this.dinosaurs){
+        if (dinos.species === species){
+            allOfSearchSpecies.push(dinos);
+        }
+    }
+    return allOfSearchSpecies
+}
 
 module.exports = Park;
